@@ -30,14 +30,7 @@
                 <option value="EN">EN</option>
               </select>
             </div>
-            <div class="col-lg-4 col-sm-6 my-1">
-              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                <option selected>AMD</option>
-                <option value="RU">RUB</option>
-                <option value="RU">USD</option>
-              </select>
-            </div>
+            
             <div class="col-lg-4 m-auto d-lg-block d-sm-none">
               <button type="button" class="btn btn-info col-lg-12">
                 Wishlist <span class="badge badge-dark bg-danger">4
@@ -60,17 +53,17 @@
               <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My account
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Login</a>
-              <a class="dropdown-item" href="#">Register</a>
-              <a class="dropdown-item" href="#">MyOrders</a>
-              <a class="dropdown-item" href="#">Settings</a>
-            </div>
-          </div>  
+          <div class="dropdown  show">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  My account
+                </button>
+                <div class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" data-toggle="modal" data-target="#logInModal" href="#">LogIn</a>
+                  <a class="dropdown-item" data-toggle="modal" data-target="#RegModal" href="#">Register</a>
+                  <a class="dropdown-item" href="#">MyOrders</a>
+                  <a class="dropdown-item" href="myaccount.html">MyAccount</a>
+                </div>
+          </div> 
         </div>      
       </div>
     </nav>
@@ -292,7 +285,7 @@
 
 
 <div class="main-row4 my-3">
-            <div class="row row1 bg-secondary  ">
+            <div class="row row1 bg-dark ">
               <h1 class="col-12 text-center text-uppercase">Our Products</h1>
             </div>
             <div class="row bg-secondary justify-content-center bg-info ">
@@ -342,7 +335,102 @@
                 </div>
               </div>
             </div>  
-          
+          <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content bg-dark">
+                  <div class="modal-header btn-info">
+                    <h5 class="modal-text text-white" id="exampleModalLabel">LOGIN</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <input type="email" class="form-control border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" placeholder="Email" id="LogInEmail" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email.</small>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" placeholder="Password" id="LogInPassword">
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="LogInSaveInfo">
+                        <label class="form-check-label text-info" for="LogInSaveInfo">RemeberMe</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-transparent btn-outline-info" data-dismiss="modal">Close</button>
+                    <a href="myAccount.html" type="button" class="btn btn-info">LOGIN</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <!-- Modal -->
+            <div class="modal fade" id="RegModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content bg-dark">
+                  <div class="modal-header btn-info">
+                    <h5 class="modal-text text-white" id="exampleModalLabel">REGISTRATION</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <input type="text" class="form-control  border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" id="validationDefault01" placeholder="Name" required="">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <input type="text" class="form-control border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" placeholder="Lastname" id="validationDefault02" required="">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-transparent border-0" id="inputGroupPrepend2">@</span>
+                            </div>
+                            <input type="text" class="form-control border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                          <input type="text" class="form-control border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" id="validationDefault03" placeholder="City" required="">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                          <select class="custom-select border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" id="validationDefault04" required="">
+                            <option selected="" disabled="" value="">Your Country</option>
+                            <option>Aremnia</option>
+                            <option>Russia</option>
+                            <option>America</option>
+                            <option>Poland</option>
+                          </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                          <input type="text" placeholder="Zip" class="form-control border-info border-right-0 border-top-0 border-left-0 bg-transparent rounded-0" id="validationDefault05" required="">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required="">
+                          <label class="form-check-label text-info" for="invalidCheck2">
+                            I Agree 
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-transparent btn-outline-info" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
